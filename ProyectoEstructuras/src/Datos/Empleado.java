@@ -10,9 +10,10 @@ public class Empleado extends Persona{
 		return rol;
 	}
 	
+	// La lista que contiene todos los empleados solo puede contener máximo 10
 	public static Lista<Persona> listaEmpleados = new Lista<Persona>(10);
 
-	public Empleado(String nombre, int cedula, String usuario, String correo, String celular, String direccion) {
+	public Empleado(String nombre, String cedula, String usuario, String correo, String celular, String direccion) {
 		super(nombre, cedula, usuario, correo, celular, direccion);
 		// TODO Auto-generated constructor stub
 		listaEmpleados.add(this);

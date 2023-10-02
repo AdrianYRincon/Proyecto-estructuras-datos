@@ -5,7 +5,7 @@ public abstract class Persona {
 	public static int contador = 1;
 	public int id;
 	public String nombre;
-	public int cedula;
+	public String cedula;
 	public String usuario;
 	public String correo;
 	public String celular;
@@ -28,11 +28,11 @@ public abstract class Persona {
 		this.nombre = nombre;
 	}
 	
-	public int getCedula() {
+	public String getCedula() {
 		return cedula;
 	}
 	
-	public void setCedula(int cedula) {
+	public void setCedula(String cedula) {
 		this.cedula = cedula;
 	}
 	
@@ -76,7 +76,7 @@ public abstract class Persona {
 		this.direccion = direccion;
 	}
 
-	public Persona(String nombre, int cedula, String usuario, String correo, String celular,
+	public Persona(String nombre, String cedula, String usuario, String correo, String celular,
 			String direccion) {
 		super();
 		this.id = contador++;
@@ -93,5 +93,4 @@ public abstract class Persona {
 		return "Persona [id=" + id + ", nombre=" + nombre + ", cedula=" + cedula + ", usuario=" + usuario + ", correo="
 				+ correo + ", celular=" + celular + ", rol=" + rol + ", direccion=" + direccion + "]";
 	}
-
 }

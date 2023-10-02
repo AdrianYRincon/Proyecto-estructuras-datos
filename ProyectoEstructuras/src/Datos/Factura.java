@@ -9,7 +9,11 @@ public class Factura {
 	public Cliente cliente;
 	public Empleado vendedor;
 	public Vehiculo vehiculo;
+	
+	// Cada factura puede contener máximo 10 productos
 	public Lista<Producto> pruductosFactura = new Lista<Producto>(10);
+	
+	// Cada factura puede contener máximo 3 servicios
 	public Lista<Servicio> serviciosFactura = new Lista<Servicio>(3);
 	
 	public Cliente getCliente() {

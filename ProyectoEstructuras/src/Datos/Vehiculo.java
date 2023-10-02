@@ -58,13 +58,13 @@ public class Vehiculo {
 		this.listaFacturas = listaFacturas;
 	}
 
-	public Vehiculo(String marca, int modelo, String placa, String color, Cliente dueño) {
+	public Vehiculo(String marca, int modelo, String placa, String color, String cedulaDueño) {
 		super();
 		this.marca = marca;
 		this.modelo = modelo;
 		this.placa = placa;
 		this.color = color;
-		this.dueño = dueño;
+		this.dueño = Cliente.getByCedulaCliente(cedulaDueño);
 	}
 
 	@Override

@@ -17,13 +17,16 @@ public class Lista <O>{
 	}	
 	
 	public void add (O elemento) {
-		top++;
 		if (this.full() == false) {
-			this.lista[this.top] = (O) elemento;
 			this.top ++;
+			this.lista[this.top] = (O) elemento;
 		} else {
 			System.out.println("La lista está llena, no se puede apilar");
 		}
+	}
+	
+	public O getByIndex(int index) {		
+		return lista[index];
 	}
 	
 	public Lista(int dimension) {

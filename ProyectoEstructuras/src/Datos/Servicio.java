@@ -7,6 +7,8 @@ public class Servicio {
 	public String nombreServicio;
 	public Empleado empleado;
 	public int precio;
+	
+	// Cada servicio puede utilizar máximo 5 productos
 	public Lista<Producto> productosServicio = new Lista<Producto>(5);
 	
 	public String getNombreServicio() {
