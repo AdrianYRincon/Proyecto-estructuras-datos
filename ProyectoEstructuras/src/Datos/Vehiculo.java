@@ -5,7 +5,8 @@ import Estructuras.Lista;
 public class Vehiculo {
 	
 	public String marca;
-	public int modelo;
+	public String modelo;
+	public int año;
 	public String placa;
 	public String color;
 	public Cliente dueño;
@@ -19,11 +20,19 @@ public class Vehiculo {
 		this.marca = marca;
 	}
 	
-	public int getModelo() {
+	public String getModelo() {
 		return modelo;
 	}
 	
-	public void setModelo(int modelo) {
+	public int getAño() {
+		return año;
+	}
+
+	public void setAño(int año) {
+		this.año = año;
+	}
+
+	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
 	public String getPlaca() {
@@ -58,13 +67,15 @@ public class Vehiculo {
 		this.listaFacturas = listaFacturas;
 	}
 
-	public Vehiculo(String marca, int modelo, String placa, String color, String cedulaDueño) {
+	public Vehiculo(String marca, String modelo, int año, String placa, String color, String cedulaDueño) {
 		super();
 		this.marca = marca;
 		this.modelo = modelo;
+		this.año = año;
 		this.placa = placa;
 		this.color = color;
 		this.dueño = Cliente.getByCedulaCliente(cedulaDueño);
+		dueño.listavehiculos.add(this);
 	}
 
 	@Override
