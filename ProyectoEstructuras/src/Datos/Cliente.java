@@ -14,16 +14,20 @@ public class Cliente extends Persona {
 	}
 	
 	// La lista que contiene todos los clientes solo puede contener máximo 10000
-	public static Lista<Cliente> listaClientes = new Lista<Cliente>(1000);
+	public static Lista<Cliente> listaClientes = new Lista<Cliente>(10000);
 	
 	// Metodo que recibe la cedula de un cliente y busca coincidencia en la listaClientes, en caso de no encontrar 
 	// retorna null
 	public static Cliente getByCedulaCliente(String cedulaCliente) {
 		int i = 0;
-		while (cedulaCliente.equals(Cliente.listaClientes.getByIndex(i).getCedula()) == false && i <= Cliente.listaClientes.top) {
+		while (cedulaCliente.equals(Cliente.listaClientes.getByIndex(i).getCedula()) == false && i < Cliente.listaClientes.top) {
 			i++;
 		}
-		return Cliente.listaClientes.getByIndex(i);			
+		if (i == Cliente.listaClientes.top && cedulaCliente.equals(Cliente.listaClientes.getByIndex(i).cedula) == false) {
+			return null;
+		} else {
+			return Cliente.listaClientes.getByIndex(i);			
+		}
 	}
 
 	public Cliente(String nombre, String cedula, String usuario, String correo, String celular, String direccion) {

@@ -14,6 +14,12 @@ public class App {
 		
 		System.out.println(Cliente.getByCedulaCliente("1125125510"));
 		System.out.println(Cliente.getByCedulaCliente("1125125510").listavehiculos);
+		
+		if (Cliente.getByCedulaCliente("1125125511") == null) {
+			System.out.println("null");
+		} else {
+			System.out.println(Cliente.getByCedulaCliente("1125125511"));
+		}
 
 	}
 

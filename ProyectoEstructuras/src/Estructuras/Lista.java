@@ -1,7 +1,5 @@
 package Estructuras;
 
-import java.util.Arrays;
-
 public class Lista <O>{
 	
 	public int dimension;
@@ -34,8 +32,4 @@ public class Lista <O>{
 		this.lista = (O[]) new Object[dimension];
 	}
 
-	@Override
-	public String toString() {
-		return "Lista [dimension=" + dimension + ", lista=" + Arrays.toString(lista) + ", top=" + top + "]";
-	}
 }

@@ -1,5 +1,6 @@
 package Datos;
 
+import Estructuras.Cola;
 import Estructuras.Lista;
 
 public class Servicio {
@@ -42,12 +43,16 @@ public class Servicio {
 	public void setProductosServicio(Lista<Producto> productosServicio) {
 		this.productosServicio = productosServicio;
 	}
-
+	
+	// La lista que contiene todos los clientes solo puede contener máximo 100
+	public static Cola<Servicio> colaDeServicios = new Cola<Servicio>(100);
+	
 	public Servicio(String nombreServicio, Empleado empleado, int precio) {
 		super();
 		this.nombreServicio = nombreServicio;
 		this.empleado = empleado;
 		this.precio = precio;
+		Servicio.colaDeServicios.enqueque(this);
 	}
 
 	@Override
