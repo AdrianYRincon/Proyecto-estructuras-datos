@@ -1,0 +1,60 @@
+ppackage Estructuras;
+
+public class Nodo<T> {
+    public T elemento;
+    public Nodo<T> siguiente;
+
+    public Nodo(T elemento) {
+        this.elemento = elemento;
+        this.siguiente = null;
+    }
+}
+
+public class ListaEnlazada<O> {
+
+    private Nodo<O> inicio;
+    private int size;
+
+    public ListaEnlazada() {
+        this.inicio = null;
+        this.size = 0;
+    }
+
+    public boolean empty() {
+        return this.size == 0;
+    }
+
+    public void add(O elemento) {
+        Nodo<O> nuevoNodo = new Nodo<>(elemento);
+        if (empty()) {
+            inicio = nuevoNodo;
+        } else {
+            Nodo<O> temp = inicio;
+            while (temp.siguiente != null) {
+                temp = temp.siguiente;
+            }
+            temp.siguiente = nuevoNodo;
+        }
+        size++;
+    }
+
+    public O getByIndex(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Índice fuera de rango");
+        }
+        Nodo<O> temp = inicio;
+        for (int i = 0; i < index; i++) {
+            temp = temp.siguiente;
+        }
+        return temp.elemento;
+    }
+
+    public static void main(String[] args) {
+        ListaEnlazada<Integer> lista = new ListaEnlazada<>();
+        lista.add(1);
+        lista.add(2);
+        lista.add(3);
+
+        System.out.println("Elemento en el índice 1: " + lista.getByIndex(1));
+    }
+}
