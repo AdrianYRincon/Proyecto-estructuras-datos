@@ -8,6 +8,9 @@ public class Cliente extends Persona {
 	
 	// Cada cliente puede tener máximo 5 vehículos
 	public Lista<Vehiculo> listavehiculos = new Lista<Vehiculo>(5);
+	
+	// Cada cliente puede tener máximo 30 facturas
+	public Lista<Factura> listaFacturas = new Lista<Factura>(30);
 
 	public String getRol() {
 		return rol;
@@ -41,5 +44,4 @@ public class Cliente extends Persona {
 		return "Cliente [rol=" + rol + ", id=" + id + ", nombre=" + nombre + ", cedula=" + cedula + ", usuario="
 				+ usuario + ", correo=" + correo + ", celular=" + celular + ", direccion=" + direccion + "]";
 	}
-	
 }

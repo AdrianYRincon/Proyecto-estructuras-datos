@@ -31,5 +31,4 @@ public class Lista <O>{
 		this.dimension = dimension;
 		this.lista = (O[]) new Object[dimension];
 	}
-
 }

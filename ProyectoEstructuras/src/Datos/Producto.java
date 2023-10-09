@@ -1,5 +1,7 @@
 package Datos;
 
+import Estructuras.Lista;
+
 public class Producto {
 	
 	public String nombreProducto;
@@ -47,6 +49,9 @@ public class Producto {
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
+	
+	// La lista que contiene todos los productos solo puede contener máximo 2000
+	public static Lista<Producto> listaProductos = new Lista<Producto>(2000);
 
 	public Producto(String nombreProducto, String marca, String modelo, int disponibilidad, int precio) {
 		super();
@@ -55,6 +60,7 @@ public class Producto {
 		this.modelo = modelo;
 		this.disponibilidad = disponibilidad;
 		this.precio = precio;
+		listaProductos.add(this);
 	}
 
 	@Override

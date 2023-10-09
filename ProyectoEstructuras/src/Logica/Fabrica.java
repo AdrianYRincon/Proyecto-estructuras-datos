@@ -7,6 +7,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
 import Datos.Cliente;
+import Datos.Producto;
 import Datos.Vehiculo;
 
 public class Fabrica {
@@ -50,4 +51,22 @@ public class Fabrica {
             e.printStackTrace();
         }
     }
+	protected static void crearProductosDeCSV (String filename) {
+		
+		try (CSVReader csvReader = new CSVReader(new FileReader(filename))) {
+            String[] nextRecord;
+            while ((nextRecord = csvReader.readNext()) != null) {
+                String nombreProducto = nextRecord[0];
+                String marca = nextRecord[1];
+                String modelo = nextRecord[2];
+                int disponibilidad = Integer.parseInt(nextRecord[3]);
+                int precio = Integer.parseInt(nextRecord[4]);
+
+                new Producto(nombreProducto, marca, modelo, disponibilidad, precio);
+            }
+        }	 catch (IOException | CsvValidationException e) {
+        	// TODO: handle exception
+            e.printStackTrace();
+        }
+	}
 }
