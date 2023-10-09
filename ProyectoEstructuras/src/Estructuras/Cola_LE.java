@@ -10,12 +10,12 @@ class Nodo<T> {
     }
 }
 
-public class Cola<T> {
+public class Cola_LE<T> {
 
     private Nodo<T> frente;
     private Nodo<T> finalCola;
 
-    public Cola() {
+    public Cola_LE() {
         this.frente = null;
         this.finalCola = null;
     }
@@ -57,19 +57,19 @@ public class Cola<T> {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        Cola<Integer> cola = new Cola<>();
-
-        cola.enqueque(1);
-        cola.enqueque(2);
-        cola.enqueque(3);
-
-        System.out.println("Cola inicial:");
-        cola.imprimirCola();
-
-        cola.dequeue();
-
-        System.out.println("Cola después de desencolar:");
-        cola.imprimirCola();
-    }
+//    public static void main(String[] args) {
+//        Cola_LE<Integer> cola = new Cola_LE<>();
+//
+//        cola.enqueque(1);
+//        cola.enqueque(2);
+//        cola.enqueque(3);
+//
+//        System.out.println("Cola inicial:");
+//        cola.imprimirCola();
+//
+//        cola.dequeue();
+//
+//        System.out.println("Cola después de desencolar:");
+//        cola.imprimirCola();
+//    }
 }
